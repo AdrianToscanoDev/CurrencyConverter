@@ -27,7 +27,7 @@ def convert_data(rcv_data):
     # get the currency type that will be converted
     og_currencyType = data[1][1]
 
-    # get the original currency type (for now, all requests will be converted to USD)
+    # for now, all requests will be converted to USD
     new_currencyType = "USD"
 
     # call CurrencyConverter and receive the converted amount (round it)
