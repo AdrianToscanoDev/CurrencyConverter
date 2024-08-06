@@ -20,3 +20,6 @@
 Additional Notes:
 - Download CurrencyConverter
 - main.py must be running for the request to be received and the response sent. 
+
+UML Diagram: 
+![image](https://github.com/user-attachments/assets/45ed819a-1a6a-4107-b80c-8b0ff7a2cef6)
