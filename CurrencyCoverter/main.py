@@ -8,7 +8,9 @@ context = zmq.Context()
 socket = context.socket(zmq.REP)
 socket.bind("tcp://*:5555")
 
-# define conversion function
+
+# The conversion happens in this function.
+# if the original currency type is invalid, then the microservice will return -0.0 as the value.
 def convert_data(rcv_data):
     # give the illusion that we are doing something
     time.sleep(3)
@@ -40,6 +42,7 @@ def convert_data(rcv_data):
 
     return convertedAmount
 
+
 # print to terminal
 print("Waiting for a request... ")
 
@@ -56,5 +59,5 @@ while True:
     convertedValue_asByte = convertedValue_json.encode('utf-8')
 
     #  Send reply back to client
-    print(f"Sending back the converted value: { convertedValue_asByte }\n")
+    print(f"Sending back the converted value: {convertedValue_asByte}\n")
     socket.send(convertedValue_asByte)
